@@ -23,7 +23,7 @@ public class Message {
     @Length(max = 30, message = "Message too long (more than 255)")
     private String tag;
 
-    @ManyToOne(fetch = FetchType.EAGER) //Указываем связь
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User author;
 
@@ -35,7 +35,6 @@ public class Message {
         this.tag = tag;
     }
 
-    //проверяем, указан ди автор, если не указан то присваиваем
     public String getAuthorName() {
         return author != null ? author.getUsername() : "<none>";
     }

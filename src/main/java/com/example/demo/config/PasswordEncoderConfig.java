@@ -9,8 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class PasswordEncoderConfig {
 
     @Bean
-    public PasswordEncoder getPasswordEncoder() { //Для шифрования
-        return new BCryptPasswordEncoder(8); //параметр характеризующий надёжность
-//        return new MessageDigestPasswordEncoder("MD5");
+    public PasswordEncoder getPasswordEncoder() {
+        return new BCryptPasswordEncoder(8);
     }
 }

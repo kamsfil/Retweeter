@@ -18,7 +18,7 @@ public class UserController {
     @Autowired
     private UserSevice userSevice;
 
-    @PreAuthorize("hasAuthority('ADMIN')") //Ограничение доступа
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
     public String userList(Model model) {
         model.addAttribute("users", userSevice.findAll());

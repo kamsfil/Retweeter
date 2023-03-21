@@ -38,11 +38,8 @@ public class User implements UserDetails {
     private String activationCode;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    // Избавляюсь от головной боли доп таблицы по хранению enam
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
-    // @CollectionTable - данное поле хранится в отдельной табл. и будет соединяться с текущей табл через "user_id"
     @Enumerated(EnumType.STRING)
-    //Указываю что хочу enam хранить в виде строки
     private Set<Role> roles;
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

@@ -29,7 +29,7 @@ public class MainController {
     @Autowired
     private MessageRepository messageRepositories;
 
-    @Value("${upload.path}") //переменная пути загрузки файлов в проперти файле
+    @Value("${upload.path}")
     private String uploadPath;
 
     @GetMapping("/")
